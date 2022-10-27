@@ -12,92 +12,97 @@ class Form extends React.Component {
       cardImage,
       cardRare,
       cardTrunfo,
-      // hasTrunfo,
+      //   hasTrunfo,
       isSaveButtonDisabled,
       onInputChange,
       onSaveButtonClick,
     } = this.props;
     return (
       <form>
-        <label htmlFor="name">
+        <label htmlFor="cardName">
           Nome
           <input
             id="name"
-            name="name"
+            name="cardName"
             type="text"
             data-testid="name-input"
             value={ cardName }
             onChange={ onInputChange }
           />
         </label>
-        <label htmlFor="description">
+        <label htmlFor="cardDescription">
           Descrição
           <textarea
             id="description"
-            name="description"
+            name="cardDescription"
             type="textarea"
             data-testid="description-input"
             value={ cardDescription }
             onChange={ onInputChange }
           />
         </label>
-        <label htmlFor="attr1">
+        <label htmlFor="cardAttr1">
           Attr1
           <input
             id="attr1"
-            name="attr1"
+            name="cardAttr1"
             type="number"
             data-testid="attr1-input"
             value={ cardAttr1 }
             onChange={ onInputChange }
           />
         </label>
-        <label htmlFor="attr2">
+        <label htmlFor="cardAttr2">
           Attr2
           <input
             id="attr2"
-            name="attr2"
+            name="cardAttr2"
             type="number"
             data-testid="attr2-input"
             value={ cardAttr2 }
             onChange={ onInputChange }
           />
         </label>
-        <label htmlFor="attr3">
+        <label htmlFor="cardAttr3">
           Attr3
           <input
             id="attr3"
-            name="attr3"
+            name="cardAttr3"
             type="number"
             data-testid="attr3-input"
             value={ cardAttr3 }
             onChange={ onInputChange }
           />
         </label>
-        <label htmlFor="image">
+        <label htmlFor="cardImage">
           Imagem
           <input
             id="image"
-            name="image"
+            name="cardImage"
             type="text"
             data-testid="image-input"
             value={ cardImage }
             onChange={ onInputChange }
           />
         </label>
-        <label htmlFor="rare">
+        <label htmlFor="cardRare">
           Raridade
-          <select data-testid="rare-input" value={ cardRare } onChange={ onInputChange }>
+          <select
+            data-testid="rare-input"
+            value={ cardRare }
+            onChange={ onInputChange }
+            name="cardRare"
+          >
             <option value="normal">normal</option>
             <option value="raro">raro</option>
             <option value="muito raro">muito raro</option>
           </select>
         </label>
-        <label htmlFor="trunfo">
+        <label htmlFor="cardTrunfo">
           Super Trunfo
           <input
             id="trunfo"
-            name="trunfo"
+            name="cardTrunfo"
             type="checkbox"
             data-testid="trunfo-input"
             checked={ cardTrunfo }
@@ -126,7 +131,7 @@ Form.propTypes = {
   cardImage: PropTypes.string.isRequired,
   cardRare: PropTypes.string.isRequired,
   cardTrunfo: PropTypes.bool.isRequired,
-  // hasTrunfo: PropTypes.bool.isRequired,
+  //   hasTrunfo: PropTypes.bool.isRequired,
   isSaveButtonDisabled: PropTypes.bool.isRequired,
   onInputChange: PropTypes.func.isRequired,
   onSaveButtonClick: PropTypes.func.isRequired,
