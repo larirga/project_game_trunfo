@@ -7,6 +7,7 @@ class App extends React.Component {
     super();
 
     this.onInputChange = this.onInputChange.bind(this);
+    this.handleForm = this.handleForm.bind(this);
 
     this.state = {
       cardName: '',
@@ -27,8 +28,45 @@ class App extends React.Component {
     const value = (target.type === 'checkbox') ? target.checked : target.value;
     this.setState({
       [name]: value,
-    });
+    }, () => this.handleForm());
   }
+
+  handleForm = () => {
+    const {
+      cardName,
+      cardDescription,
+      cardAttr1,
+      cardAttr2,
+      cardAttr3,
+      cardImage,
+      cardRare,
+    } = this.state;
+
+    const highValue = 210;
+    const eachValue = 90;
+    const attr1Value = parseInt(cardAttr1, 10);
+    const attr2Value = parseInt(cardAttr2, 10);
+    const attr3Value = parseInt(cardAttr3, 10);
+    const sum = attr1Value + attr2Value + attr3Value;
+
+    const newStateForm = (cardName === ''
+    || cardDescription === ''
+    || cardImage === ''
+    || cardRare === '');
+    const newValueSum = sum > highValue;
+    const newAttrValue = (cardAttr1 < 0
+      || cardAttr1 > eachValue
+      || cardAttr2 < 0
+      || cardAttr2 > eachValue
+      || cardAttr3 < 0
+      || cardAttr3 > eachValue
+    );
+    const newStateBttn = newStateForm || newValueSum || newAttrValue;
+
+    this.setState({
+      isSaveButtonDisabled: newStateBttn,
+    });
+  };
 
   render() {
     const {
