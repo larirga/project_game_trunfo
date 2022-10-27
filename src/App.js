@@ -104,6 +104,10 @@ class App extends React.Component {
       cardRare: 'normal',
       cardTrunfo: false,
     }));
+
+    if (cardTrunfo) {
+      this.setState({ hasTrunfo: true });
+    }
   };
 
   render() {
