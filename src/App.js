@@ -1,3 +1,4 @@
+import './App.css';
 import React from 'react';
 import Card from './components/Card';
 import Form from './components/Form';
@@ -126,7 +127,7 @@ class App extends React.Component {
     } = this.state;
 
     return (
-      <div>
+      <div className="form">
         <h1>Tryunfo</h1>
         <Form
           cardName={ cardName }

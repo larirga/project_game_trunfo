@@ -1,0 +1,29 @@
+* {
+    margin: 0;
+}
+
+body {
+    background-color: #d5daeb;
+    margin-left: 500px;
+    font-size: 20px;
+}
+
+h1 {
+    font-family: monospace;
+    margin-bottom: 50px;
+    margin-left: 100px;
+    color: #ee4266;
+}
+.form {
+    font-family: monospace;
+    border: solid 2px black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: space-between;
+}
+button {
+    font-size: 20px;
+    background-color: #fcd307;
+    border-radius: 15px;
+}
